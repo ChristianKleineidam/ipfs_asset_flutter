@@ -1,0 +1,15 @@
+targets:
+  $default:
+    builders:
+      ipfs_asset_flutter|dummy_builder:
+        generate_for:
+          - lib/**
+
+builders:
+  dummy_builder:
+    import: "package:ipfs_asset_flutter/src/builder.dart"
+    builder_factories: ["dummyBuilder"]
+    build_extensions: {".dart": [".dummy"]}
+    auto_apply: root_package
+    build_to: source
+    applies_builders: []
